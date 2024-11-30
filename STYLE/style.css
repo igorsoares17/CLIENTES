@@ -1,0 +1,563 @@
+@media screen and (min-width: 1000px) {
+
+    *{
+        margin: 0;
+        border: 0;
+        padding: 0;
+        font-size: 100%;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    body {
+
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    header {
+
+        width: 100%;
+        height: 15vh;
+        background-color: orange;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-radius: 0px 0px 20px 20px;
+    }
+
+    h1 {
+
+        width: max-content;
+        height: max-content;
+        font-size: 2vw;
+    }
+
+    main {
+
+        width: 100%;
+        height: 85vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    #clients {
+
+        width: 60%;
+        height: 90%;
+        border: 1px solid #000;
+        border-radius: 20px;
+    }
+
+    h2 {
+        width: max-content;
+        height: max-content;
+        margin-left: 3%;
+        margin-top: 3%;
+        font-size: 1.5vw;
+    }
+
+    form {
+
+        width: 20%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #000;
+        border-radius: 20px;
+    }
+
+    .title-label {
+
+        margin-left: 5%;
+        margin-top: 3vh;
+        font-size: 1vw;
+        width: max-content;
+        height: max-content;
+    }
+
+    input[type="text"] {
+
+        width: 70%;
+        height: 8%;
+        border: 2px solid;
+        border-radius: 40px;
+        padding-left: 3%;
+        margin-left: 3%;
+        margin-top: 1%;
+    }
+
+    input[type="date"] {
+
+        width: 70%;
+        height: 8%;
+        border: 2px solid;
+        border-radius: 40px;
+        padding-left: 3%;
+        margin-left: 3%;
+        margin-top: 1%;
+        text-align: center;
+        font-size: 1.2vw;
+    }
+
+    h3 {
+
+        margin-top: 3vh;
+        width: max-content;
+        height: max-content;
+        font-size: 1vw;
+        margin-left: 5%;
+    }
+
+    #container-checkbox {
+
+        width: 100%;
+        height: 12%;
+        margin-top: 1vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    input[type="radio"] {
+
+        width: 1.5vw;
+        margin-left: 3%;
+    }
+
+    .title-gender {
+
+        width: max-content;
+        height: max-content;
+    }
+
+    #title-photo {
+
+        margin-left: 5%;
+        margin-top: 2vh;
+        font-size: 1vw;
+        width: max-content;
+        height: max-content;
+    }
+
+    #photo {
+
+        width: 45%;
+        height: max-content;
+        margin-left: 3%;
+
+    }
+
+    #container-buttons {
+
+        margin-top: 2vh;
+        width: 95%;
+        height: 10%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    button {
+
+        width: 30%;
+        height: 80%;
+        color: #000;
+        background-color: orange;
+        cursor: pointer;
+    }
+
+    button:hover {
+
+        background-color: rgb(212, 141, 10);
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 1000px) {
+
+    *{
+        margin: 0;
+        border: 0;
+        padding: 0;
+        font-size: 100%;
+        width: 100%;
+
+
+    }
+
+    body {
+
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    header {
+
+        width: 100%;
+        height: 10vh;
+        background-color: orange;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-radius: 0px 0px 20px 20px;
+    }
+
+    h1 {
+
+        width: max-content;
+        height: max-content;
+        font-size: 6vw;
+    }
+
+    main {
+
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    #clients {
+
+        width: 60%;
+        height: 20vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    h2 {
+        width: max-content;
+        height: max-content;
+        margin-top: 3%;
+        font-size: 5vw;
+    }
+
+    form {
+
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #title-form {
+
+        margin-left: 35%;
+    }
+
+    .title-label {
+
+        margin-left: 23%;
+        margin-top: 3vh;
+        font-size: 3vw;
+        width: max-content;
+        height: max-content;
+    }
+
+    input[type="text"] {
+
+        width: 50%;
+        height: 5vh;
+        border: 2px solid;
+        border-radius: 40px;
+        padding-left: 3%;
+        margin-left: 20%;
+        margin-top: 1%;
+        font-size: 3vw;
+    }
+
+    input[type="date"] {
+
+        width: 50%;
+        height: 5vh;
+        border: 2px solid;
+        border-radius: 40px;
+        padding-left: 3%;
+        margin-left: 20%;
+        margin-top: 1%;
+        text-align: center;
+        font-size: 3vw;
+    }
+
+    h3 {
+
+        margin-top: 4vh;
+        width: max-content;
+        height: max-content;
+        font-size: 3vw;
+        margin-left: 23%;
+    }
+
+    #container-checkbox {
+
+        width: 50%;
+        margin-top: 1vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 20%;
+    }
+
+    input[type="radio"] {
+
+        width: 5vw;
+        margin-left: 3%;
+    }
+
+    .title-gender {
+
+        width: max-content;
+        height: max-content;
+        font-size: 3vw;
+    }
+
+    #title-photo {
+
+        margin-left: 23%;
+        margin-top: 4vh;
+        font-size: 3vw;
+        width: max-content;
+        height: max-content;
+    }
+
+    #photo {
+
+        width: 23%;
+        height: max-content;
+        margin-left: 23%;
+        font-size: 3vw;
+
+    }
+
+    #container-buttons {
+
+        margin-top: 4vh;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    button {
+
+        width: 20%;
+        color: #000;
+        background-color: orange;
+        cursor: pointer;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        font-size: 3vw;
+    }
+
+    button:hover {
+
+        background-color: rgb(212, 141, 10);
+    }
+}
+
+@media screen and (min-width: 200px) and (max-width: 500px) {
+
+    *{
+        margin: 0;
+        border: 0;
+        padding: 0;
+        font-size: 100%;
+        width: 100%;
+
+
+    }
+
+    body {
+
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    header {
+
+        width: 100%;
+        height: 10vh;
+        background-color: orange;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-radius: 0px 0px 20px 20px;
+    }
+
+    h1 {
+
+        width: max-content;
+        height: max-content;
+        font-size: 6vw;
+    }
+
+    main {
+
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    #clients {
+
+        width: 60%;
+        height: 20vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    h2 {
+        width: max-content;
+        height: max-content;
+        margin-top: 3%;
+        font-size: 5.5vw;
+    }
+
+    form {
+
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #title-form {
+
+        margin-left: 35%;
+    }
+
+    .title-label {
+
+        margin-left: 20%;
+        margin-top: 3vh;
+        font-size: 4.5vw;
+        width: max-content;
+        height: max-content;
+    }
+
+    input[type="text"] {
+
+        width: 70%;
+        height: 5vh;
+        border: 2px solid;
+        border-radius: 40px;
+        padding-left: 3%;
+        margin-left: 15%;
+        margin-top: 1%;
+        font-size: 4vw;
+    }
+
+    input[type="date"] {
+
+        width: 70%;
+        height: 5vh;
+        border: 2px solid;
+        border-radius: 40px;
+        padding-left: 3%;
+        margin-left: 15%;
+        margin-top: 1%;
+        text-align: center;
+        font-size: 4vw;
+    }
+
+    h3 {
+
+        margin-top: 4vh;
+        width: max-content;
+        height: max-content;
+        font-size: 4.5vw;
+        margin-left: 20%;
+    }
+
+    #container-checkbox {
+
+        width: 50%;
+        margin-top: 1vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 20%;
+    }
+
+    input[type="radio"] {
+
+        width: 7vw;
+        margin-left: 3%;
+    }
+
+    .title-gender {
+
+        width: max-content;
+        height: max-content;
+        font-size: 4vw;
+    }
+
+    #title-photo {
+
+        margin-left: 20%;
+        margin-top: 4vh;
+        font-size: 4.5vw;
+        width: max-content;
+        height: max-content;
+    }
+
+    #photo {
+
+        width: 35%;
+        height: max-content;
+        margin-left: 20%;
+        font-size: 4vw;
+
+    }
+
+    #container-buttons {
+
+        margin-top: 4vh;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    button {
+
+        width: 25%;
+        color: #000;
+        background-color: orange;
+        cursor: pointer;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        font-size: 5vw;
+    }
+
+    button:hover {
+
+        background-color: rgb(212, 141, 10);
+    }
+}
