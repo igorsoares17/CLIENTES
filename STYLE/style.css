@@ -140,7 +140,7 @@
 
         width: 70%;
         height: 8%;
-        border: 2px solid;
+        border: 2px solid #000;
         border-radius: 40px;
         padding-left: 3%;
         margin-left: 3%;
@@ -151,8 +151,8 @@
 
         width: 70%;
         height: 8%;
-        border: 2px solid;
         border-radius: 40px;
+        border: 2px solid #000;
         padding-left: 3%;
         margin-left: 3%;
         margin-top: 1%;
@@ -585,7 +585,7 @@
 
         width: max-content;
         height: max-content;
-        font-size: 2.4vw;
+        font-size: 2vw;
         text-align: center;
     }
 
