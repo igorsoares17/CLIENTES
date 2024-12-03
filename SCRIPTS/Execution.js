@@ -5,6 +5,7 @@ class Execution {
         this.form = document.querySelector("form");
         this.inputs = document.querySelectorAll("input");
         this.areaClients = document.getElementById("clients");
+        this.areaNewClients = [];
 
         //ALTURA INICIAL DA DIV CLIENTS PARA O JAVASCRIPT:
         this.height = "40vh";
@@ -84,9 +85,11 @@ class Execution {
         this.areaClients.appendChild(areaNewClient);
         areaNewClient.setAttribute("class", "area-new-client");
 
+        this.areaNewClients.push(areaNewClient);
+
         let areaDatas = []
 
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < 7; i++) {
 
             areaDatas[i] = document.createElement("div");
             areaNewClient.appendChild(areaDatas[i]);
@@ -110,8 +113,20 @@ class Execution {
                         
         areaDatas[5].innerHTML = `<h3 class="title-datas">SEXO</h3>
                                    <p class="text-datas">${this.user._gender}</p>`;
+        areaDatas[6].innerHTML = `<button class="button-user" id="button-edit">Editar</button>
+                                  <button class="button-user" id="button-delete">Excluir</button>`
 
         this.updateCount();
+
+        let countUsers = 0;
+
+        for (let z = 0; z < this.areaClients.children.length-1; z++) {
+
+            countUsers++;
+        }
+
+        this.editUser(countUsers);
+        this.removeUser(countUsers);
 
     }
 
@@ -171,6 +186,61 @@ class Execution {
 
             return true;
         }
+    }
+
+    editUser(number) {
+
+        this.buttonsEdit = document.querySelectorAll("#button-edit");
+        let buttonEdit = this.buttonsEdit[number-1];
+
+        buttonEdit.addEventListener('click', event => {
+
+            this.textDatas = Array.from(this.areaNewClients[number-1].children);
+
+            for (let d = 1; d < 6; d++) {
+  
+                this.textDatas[d].contentEditable = "true";
+            }
+        })
+
+        this.finishEdit();
+    
+    }
+
+    removeUser(number) {
+
+        this.buttonsDelete = document.querySelectorAll("#button-delete");
+        let buttonDelete = this.buttonsDelete[number-1]
+
+        buttonDelete.addEventListener('click', event => {
+
+            Array.from(this.areaNewClients)[number-1].remove();
+
+            if ((number - 1) != 0) {
+
+                for (let j = (number-1); j < this.areaNewClients.length-1;j++) {
+
+                    this.areaNewClients[j] = this.areaNewClients[j+1]
+                }
+            }
+
+            this.updateCount();
+        })
+
+    }
+
+    finishEdit() {
+
+        document.addEventListener('keydown', event => {
+
+            if (event.key == 'Enter') {
+
+                for (let p = 1; p < 6; p++) {
+  
+                    this.textDatas[p].contentEditable = "false";
+                }
+            }
+        })
     }
 }
 

@@ -51,12 +51,20 @@
     #clients {
 
         margin-top: 4vh;
-        width: 60%;
+        width: 70%;
         height: 40vh;
         border: 1px solid #000;
         border-radius: 20px;
         display: flex;
         flex-direction: column;
+    }
+
+    h2 {
+        width: max-content;
+        height: max-content;
+        margin-left: 3%;
+        margin-top: 3%;
+        font-size: 1.5vw;
     }
 
     .area-new-client {
@@ -71,11 +79,12 @@
 
     .area-datas {
 
-        width: 20%;
+        width: 14%;
         height: 10vh;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-around;
     }
 
     .figure-datas {
@@ -108,12 +117,31 @@
         text-align: center;
     }
 
-    h2 {
-        width: max-content;
-        height: max-content;
-        margin-left: 3%;
-        margin-top: 3%;
-        font-size: 1.5vw;
+    .button-user {
+
+        width: 50%;
+        height: 30%;
+        font-size: 1vw;
+    }
+
+    #button-edit {
+
+       background-color: rgb(77, 77, 208);
+    }
+
+    #button-edit:hover {
+
+        background-color: rgb(56, 56, 154);
+    }
+
+    #button-delete {
+
+        background-color: red;
+    }
+
+    #button-delete:hover {
+
+        background-color: rgb(187, 39, 39);
     }
 
     form {
@@ -292,6 +320,13 @@
         flex-direction: column;
     }
 
+    h2 {
+        width: max-content;
+        height: max-content;
+        margin-top: 3%;
+        font-size: 5vw;
+    }
+
     #title-clients {
 
         margin-left: 3%;
@@ -314,7 +349,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: center;
+        justify-content: space-around;
     }
 
     .figure-datas {
@@ -347,11 +382,31 @@
         text-align: center;
     }
 
-    h2 {
-        width: max-content;
-        height: max-content;
-        margin-top: 3%;
-        font-size: 5vw;
+    .button-user {
+
+        width: 50%;
+        height: 30%;
+        font-size: 2vw;
+    }
+
+    #button-edit {
+
+       background-color: rgb(77, 77, 208);
+    }
+
+    #button-edit:hover {
+
+        background-color: rgb(56, 56, 154);
+    }
+
+    #button-delete {
+
+        background-color: red;
+    }
+
+    #button-delete:hover {
+
+        background-color: rgb(187, 39, 39);
     }
 
     form {
@@ -557,6 +612,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-around;
     }
 
     .figure-datas {
@@ -587,6 +643,33 @@
         height: max-content;
         font-size: 2vw;
         text-align: center;
+    }
+
+    .button-user {
+
+        width: 70%;
+        height: 30%;
+        font-size: 3vw;
+    }
+
+    #button-edit {
+
+       background-color: rgb(77, 77, 208);
+    }
+
+    #button-edit:hover {
+
+        background-color: rgb(56, 56, 154);
+    }
+
+    #button-delete {
+
+        background-color: red;
+    }
+
+    #button-delete:hover {
+
+        background-color: rgb(187, 39, 39);
     }
 
     h2 {
