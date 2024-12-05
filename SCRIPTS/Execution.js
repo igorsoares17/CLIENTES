@@ -5,8 +5,10 @@ class Execution {
         this.form = document.querySelector("form");
         this.inputs = document.querySelectorAll("input");
         this.areaClients = document.getElementById("clients");
-        this.areaNewClients = [];
         this.inputAdmin = document.getElementById("input-admin");
+        this.numberAdmin = 0;
+        this.numberClients = 0;
+        this.arrayClients = [];
 
         //ALTURA INICIAL DA DIV CLIENTS PARA O JAVASCRIPT:
         this.height = "40vh";
@@ -78,26 +80,27 @@ class Execution {
 
         if (!this.inputAdmin.checked) { 
 
-            this.user = new User(this.inputs[0].value, document.querySelector('input[name="gender"]:checked').value, this.inputs[2].value, this.inputs[1].value, this.img, Utils.dateFormat(new Date), "no");
+            this.user = new User(this.inputs[0].value, document.querySelector('input[name="gender"]:checked').value, this.inputs[2].value, this.inputs[1].value, this.img, Utils.dateFormat(new Date), false);
         }
 
         else {
 
-            this.user = new User(this.inputs[0].value, document.querySelector('input[name="gender"]:checked').value, this.inputs[2].value, this.inputs[1].value, this.img, Utils.dateFormat(new Date), "yes");
+            this.user = new User(this.inputs[0].value, document.querySelector('input[name="gender"]:checked').value, this.inputs[2].value, this.inputs[1].value, this.img, Utils.dateFormat(new Date), true);
         }
+
+        this.arrayClients.push(this.user);
 
         this.form.dataset.user = JSON.stringify(this.user);
         console.log(JSON.parse(this.form.dataset.user));
 
         let newHeight = Utils.getHeight(Utils.getNumber(this.height));
+        
         this.height = newHeight;
         this.areaClients.style.height = this.height;
 
         let areaNewClient = document.createElement("div");
         this.areaClients.appendChild(areaNewClient);
         areaNewClient.setAttribute("class", "area-new-client");
-
-        this.areaNewClients.push(areaNewClient);
 
         let areaDatas = []
 
@@ -129,21 +132,20 @@ class Execution {
         areaDatas[6].innerHTML = `<h3 class="title-datas">ADMIN</h3>
                                    <p class="text-datas">${this.user._admin}</p>`;
 
-        areaDatas[7].innerHTML = `<button class="button-user" id="button-edit">Editar</button>
-                                  <button class="button-user" id="button-delete">Excluir</button>`
+        areaDatas[7].innerHTML = `<button class="button-user-edit">Editar</button>
+                                  <button class="button-user-delete">Excluir</button>`
 
-        this.updateCount();
+        this.numberClients = 0;
 
-        let countUsers = 0;
+        for (let z = 0; z < this.areaClients.children.length-2; z++) {
 
-        for (let z = 0; z < this.areaClients.children.length-1; z++) {
-
-            countUsers++;
+            this.numberClients++;
         }
 
-        this.editUser(countUsers);
-        this.removeUser(countUsers);
-
+        this.updateCountCad();
+            
+        this.editUser(this.numberClients);
+        this.removeUser(this.numberClients);       
     }
 
     getPhoto() {
@@ -166,27 +168,55 @@ class Execution {
         })
     }
 
-    updateCount() {
+    updateCountCad() {
 
-        let count = 0;
+        this.numberClients = 0;
 
-        for (let z = 0; z < this.areaClients.children.length-1; z++) {
+        for (let z = 0; z < this.areaClients.children.length-2; z++) {
 
-            count++;
+            this.numberClients++;
+        }
+
+        if (this.user._admin) {
+
+            this.numberAdmin++;
         }
 
         let clientsQuantity = document.querySelector("#title-clients");
-        clientsQuantity.innerHTML = `CLIENTES (${count})`;
+        let adminQuantity = document.querySelector("#title-admin");
 
+        clientsQuantity.innerHTML = `CLIENTES (${this.numberClients})`;
+        adminQuantity.innerHTML = `ADMIN (${this.numberAdmin})`;
+
+    }
+
+    updateCountRemove(value) {
+
+        let textProblem = this.arrayClients[value-1]._admin;
+
+        this.numberClients--;
+
+        if (textProblem == true) {
+
+            this.numberAdmin--;
+        }
+
+        this.arrayClients.splice(value-1, 1);
+
+        let clientsQuantity = document.querySelector("#title-clients");
+        let adminQuantity = document.querySelector("#title-admin");
+
+        clientsQuantity.innerHTML = `CLIENTES (${this.numberClients})`;
+        adminQuantity.innerHTML = `ADMIN (${this.numberAdmin})`;
     }
 
     validInputName(name) {
 
-        let vowels = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', " "];
+        let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', " "];
 
         for (let x = 0; x < name.length; x++) {
 
-            if (vowels.indexOf(name[x]) == -1) {
+            if (letters.indexOf(name[x]) == -1) {
 
                 return "O NOME DEVE CONTER APENAS LETRAS!"
             }
@@ -206,14 +236,14 @@ class Execution {
 
     editUser(number) {
 
-        this.buttonsEdit = document.querySelectorAll("#button-edit");
+        this.buttonsEdit = document.getElementsByClassName("button-user-edit");
         let buttonEdit = this.buttonsEdit[number-1];
 
         buttonEdit.addEventListener('click', event => {
 
-            this.textDatas = Array.from(this.areaNewClients[number-1].children);
+            this.textDatas = Array.from(document.querySelectorAll(".area-new-client").children);
 
-            for (let d = 1; d < 6; d++) {
+            for (let d = 1; d < 7; d++) {
   
                 this.textDatas[d].contentEditable = "true";
             }
@@ -225,22 +255,15 @@ class Execution {
 
     removeUser(number) {
 
-        this.buttonsDelete = document.querySelectorAll("#button-delete");
-        let buttonDelete = this.buttonsDelete[number-1]
+        this.buttonsDelete = document.getElementsByClassName("button-user-delete");
+        let buttonDelete = this.buttonsDelete[number-1];
 
         buttonDelete.addEventListener('click', event => {
 
-            Array.from(this.areaNewClients)[number-1].remove();
+            this.updateCountRemove(number);
 
-            if ((number - 1) != 0) {
+            Array.from(document.querySelectorAll(".area-new-client"))[number-1].remove();
 
-                for (let j = (number-1); j < this.areaNewClients.length-1;j++) {
-
-                    this.areaNewClients[j] = this.areaNewClients[j+1]
-                }
-            }
-
-            this.updateCount();
         })
 
     }
@@ -251,7 +274,7 @@ class Execution {
 
             if (event.key == 'Enter') {
 
-                for (let p = 1; p < 6; p++) {
+                for (let p = 1; p < 7; p++) {
   
                     this.textDatas[p].contentEditable = "false";
                 }

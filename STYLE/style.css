@@ -59,6 +59,11 @@
         flex-direction: column;
     }
 
+    .title-clients {
+
+        font-size: 2vw;
+    }
+
     h2 {
         width: max-content;
         height: max-content;
@@ -117,29 +122,28 @@
         text-align: center;
     }
 
-    .button-user {
+    .button-user-edit {
 
+        background-color: rgb(77, 77, 208);
         width: 50%;
         height: 30%;
         font-size: 1vw;
     }
 
-    #button-edit {
-
-       background-color: rgb(77, 77, 208);
-    }
-
-    #button-edit:hover {
+    .button-user-edit:hover {
 
         background-color: rgb(56, 56, 154);
     }
 
-    #button-delete {
+    .button-user-delete {
 
         background-color: red;
+        width: 50%;
+        height: 30%;
+        font-size: 1vw;
     }
 
-    #button-delete:hover {
+    #button-user-delete:hover {
 
         background-color: rgb(187, 39, 39);
     }
@@ -350,9 +354,10 @@
         font-size: 5vw;
     }
 
-    #title-clients {
+    .title-clients {
 
         margin-left: 3%;
+        font-size: 4vw;
     }
 
     .area-new-client {
@@ -405,26 +410,25 @@
         text-align: center;
     }
 
-    .button-user {
+    #button-user-edit {
 
+        background-color: rgb(77, 77, 208);
         width: 50%;
         height: 30%;
         font-size: 2vw;
     }
 
-    #button-edit {
-
-       background-color: rgb(77, 77, 208);
-    }
-
-    #button-edit:hover {
+    #button-user-edit:hover {
 
         background-color: rgb(56, 56, 154);
     }
 
-    #button-delete {
+    #button-user-delete {
 
         background-color: red;
+        width: 50%;
+        height: 30%;
+        font-size: 2vw;
     }
 
     #button-delete:hover {
@@ -637,9 +641,10 @@
         flex-direction: column;
     }
 
-    #title-clients {
+    .title-clients {
 
         margin-left: 3%;
+        font-size: 6vw;
     }
 
     .area-new-client {
@@ -692,29 +697,28 @@
         text-align: center;
     }
 
-    .button-user {
+    .button-user-edit {
 
         width: 70%;
         height: 30%;
         font-size: 3vw;
+        background-color: rgb(77, 77, 208);
     }
 
-    #button-edit {
-
-       background-color: rgb(77, 77, 208);
-    }
-
-    #button-edit:hover {
+    #button-user-edit:hover {
 
         background-color: rgb(56, 56, 154);
     }
 
-    #button-delete {
+    #button-user-delete {
 
+        width: 70%;
+        height: 30%;
+        font-size: 3vw;
         background-color: red;
     }
 
-    #button-delete:hover {
+    #button-user-delete:hover {
 
         background-color: rgb(187, 39, 39);
     }
