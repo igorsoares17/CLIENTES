@@ -6,6 +6,7 @@ class Execution {
         this.inputs = document.querySelectorAll("input");
         this.areaClients = document.getElementById("clients");
         this.areaNewClients = [];
+        this.inputAdmin = document.getElementById("input-admin");
 
         //ALTURA INICIAL DA DIV CLIENTS PARA O JAVASCRIPT:
         this.height = "40vh";
@@ -75,7 +76,18 @@ class Execution {
         let newLetter = this.inputs[0].value.charAt(0).toUpperCase();
         this.inputs[0].value = this.inputs[0].value.replace(`${this.inputs[0].value.charAt(0)}`, `${newLetter}`);
 
-        this.user = new User(this.inputs[0].value, document.querySelector('input[name="gender"]:checked').value, this.inputs[2].value, this.inputs[1].value, this.img, Utils.dateFormat(new Date));
+        if (!this.inputAdmin.checked) { 
+
+            this.user = new User(this.inputs[0].value, document.querySelector('input[name="gender"]:checked').value, this.inputs[2].value, this.inputs[1].value, this.img, Utils.dateFormat(new Date), "no");
+        }
+
+        else {
+
+            this.user = new User(this.inputs[0].value, document.querySelector('input[name="gender"]:checked').value, this.inputs[2].value, this.inputs[1].value, this.img, Utils.dateFormat(new Date), "yes");
+        }
+
+        this.form.dataset.user = JSON.stringify(this.user);
+        console.log(JSON.parse(this.form.dataset.user));
 
         let newHeight = Utils.getHeight(Utils.getNumber(this.height));
         this.height = newHeight;
@@ -89,7 +101,7 @@ class Execution {
 
         let areaDatas = []
 
-        for (let i = 0; i < 7; i++) {
+        for (let i = 0; i <= 7; i++) {
 
             areaDatas[i] = document.createElement("div");
             areaNewClient.appendChild(areaDatas[i]);
@@ -113,7 +125,11 @@ class Execution {
                         
         areaDatas[5].innerHTML = `<h3 class="title-datas">SEXO</h3>
                                    <p class="text-datas">${this.user._gender}</p>`;
-        areaDatas[6].innerHTML = `<button class="button-user" id="button-edit">Editar</button>
+
+        areaDatas[6].innerHTML = `<h3 class="title-datas">ADMIN</h3>
+                                   <p class="text-datas">${this.user._admin}</p>`;
+
+        areaDatas[7].innerHTML = `<button class="button-user" id="button-edit">Editar</button>
                                   <button class="button-user" id="button-delete">Excluir</button>`
 
         this.updateCount();
