@@ -170,6 +170,8 @@ class Execution {
 
     updateCountCad() {
 
+        //MÉTODO QUE ATUALIZA AS ESTATÍSTICAS APÓS USUÁRIO SER CADASTRADO
+
         this.numberClients = 0;
 
         for (let z = 0; z < this.areaClients.children.length-2; z++) {
@@ -192,6 +194,8 @@ class Execution {
 
     updateCountRemove(value) {
 
+        //MÉTODO QUE ATUALIZA ESTATÍSTICAS APÓS USUÁRIO SER REMOVIDO
+
         let textProblem = this.arrayClients[value-1]._admin;
 
         this.numberClients--;
@@ -211,6 +215,8 @@ class Execution {
     }
 
     validInputName(name) {
+
+        //VALIDAR SE O NOME CONTÉM PELO MENOS 4 LETRAS E SOMENTE LETRAS
 
         let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', " "];
 
