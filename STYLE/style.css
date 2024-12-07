@@ -410,7 +410,7 @@
         text-align: center;
     }
 
-    #button-user-edit {
+    .button-user-edit {
 
         background-color: rgb(77, 77, 208);
         width: 50%;
@@ -418,12 +418,12 @@
         font-size: 2vw;
     }
 
-    #button-user-edit:hover {
+    .button-user-edit:hover {
 
         background-color: rgb(56, 56, 154);
     }
 
-    #button-user-delete {
+    .button-user-delete {
 
         background-color: red;
         width: 50%;
@@ -431,7 +431,7 @@
         font-size: 2vw;
     }
 
-    #button-delete:hover {
+    .button-delete:hover {
 
         background-color: rgb(187, 39, 39);
     }
@@ -705,12 +705,12 @@
         background-color: rgb(77, 77, 208);
     }
 
-    #button-user-edit:hover {
+    .button-user-edit:hover {
 
         background-color: rgb(56, 56, 154);
     }
 
-    #button-user-delete {
+    .button-user-delete {
 
         width: 70%;
         height: 30%;
@@ -718,7 +718,7 @@
         background-color: red;
     }
 
-    #button-user-delete:hover {
+    .button-user-delete:hover {
 
         background-color: rgb(187, 39, 39);
     }
