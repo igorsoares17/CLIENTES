@@ -645,6 +645,8 @@
 
         margin-left: 3%;
         font-size: 6vw;
+        width: max-content;
+        height: max-content;
     }
 
     .area-new-client {
