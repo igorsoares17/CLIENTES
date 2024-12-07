@@ -442,19 +442,23 @@ class Execution {
     updateCountInit() {
 
         this.numberClients = 0;
+        let usersDatas = JSON.parse(localStorage.getItem("users"));
 
         for (let z = 0; z < this.areaClients.children.length-2; z++) {
 
             this.numberClients++;
         }
 
-        if (this.usersStorage[this.numberClients-1]._admin == true) {
+        for (let x = 0; x < usersDatas.length; x++) {
 
-            this.numberAdmin++;
+            if (usersDatas[x]._admin == true) {
+
+                this.numberAdmin++;
+            }
         }
 
         let clientsQuantity = document.querySelector("#title-clients");
-        let adminQuantity = document.querySelector("#title-admin");
+        let adminQuantity = document.querySelector("#title-admin-top");
 
         clientsQuantity.innerHTML = `CLIENTES (${this.numberClients})`;
         adminQuantity.innerHTML = `ADMIN (${this.numberAdmin})`;
@@ -465,4 +469,3 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     let execution = new Execution();
 })
-
